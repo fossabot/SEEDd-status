@@ -1,8 +1,8 @@
-# bitcoind-status
+# SEEDd-status
 
-[![Travis CI Status](https://travis-ci.org/craigwatson/bitcoind-status.svg?branch=master)](https://travis-ci.org/craigwatson/bitcoind-status)
+[![Travis CI Status](https://travis-ci.org/SEEDPlatform/SEEDd-status.svg?branch=master)](https://travis-ci.org/SEEDPlatform/SEEDd-status)
 
-This is a small PHP application designed to display status and information from the Bitcoin node daemon.
+This is a small PHP application designed to display status and information from the SEED node daemon.
 
 #### Table of Contents
 
@@ -16,9 +16,9 @@ This is a small PHP application designed to display status and information from 
 
 To run the application, you will need:
 
-  * A Bitcoin node with RPC enabled.
+  * A SEED node with RPC enabled.
   * A web-server with PHP installed.
-  * The PHP `curl` module - this is used to make RPC calls to the Bitcoin daemon.
+  * The PHP `curl` module - this is used to make RPC calls to the SEED daemon.
 
 ### PHP Support
 
@@ -89,10 +89,10 @@ The key of the entry is an internal-only identifier, and the value is the lower-
 
 ## Contributing
 
-Contributions and testing reports are extremely welcome. Please submit a pull request or issue on [GitHub](https://github.com/craigwatson/bitcoind-status), and make sure
+Contributions and testing reports are extremely welcome. Please submit a pull request or issue on [GitHub](https://github.com/SEEDPlatform/SEEDd-status), and make sure
 that your code conforms to the PEAR PHP coding standards (Travis CI will test your pull request when it's sent).
 
-I accept tips via Bitcoin to 1N73BsKN2bubvRo9dXbUjwe4SBHW4j4j4B - if you would like to buy me a beer, please do!
+I accept tips via SEED to SecEpiAJ6ubikjtMVRfAPzgxGfe2DjqpoT - if you would like to buy us a beer, please do!
 
 ## Advanced Options
 
@@ -114,7 +114,7 @@ The `config.php` file also contains lots of options to control how the applicati
 | Value                   | Type    | Default   | Explanation                                 |
 |-------------------------|---------|-----------|---------------------------------------------|
 | `display_donation_text` | Boolean | `false`    | Display text to encourage donations        |
-| `donation_address`      | String  | `not_set` | Bitcoin address to advertise for donations  |
+| `donation_address`      | String  | `not_set` | SEED address to advertise for donations  |
 | `donation_amount`       | String  | `0.001`   | Donation amount - not currently implemented |
 
 ### Peers
@@ -132,10 +132,10 @@ The `config.php` file also contains lots of options to control how the applicati
 | Value               | Type    | Default                               | Explanation                                                          |
 |---------------------|---------|---------------------------------------|----------------------------------------------------------------------|
 | `cache_geo_data`    | Boolean | `true`                                | Enables caching of geolocation data                                  |
-| `geo_cache_file`    | String  | `/var/tmp/bitcoind-geolocation.cache` | File location for the geolocation cache                              |
+| `geo_cache_file`    | String  | `/var/tmp/SEEDd-geolocation.cache` | File location for the geolocation cache                              |
 | `geo_cache_time`    | Int     | `604800`                              | Time in seconds until geolocation cache expires - defaults to 7 days |
 | `use_cache`         | Boolean | `true`                                | Enable cache                                                         |
-| `cache_file`        | String  | `/tmp/bitcoind-status.cache`          | File location to write to for cache                                  |
+| `cache_file`        | String  | `/tmp/SEEDd-status.cache`          | File location to write to for cache                                  |
 | `max_cache_time`    | Int     | `300`                                 | Expiry time for cache                                                |
 | `nocache_whitelist` | Array   | `array('127.0.0.1')`                  | The IP addresses that are allowed to bypass or clear cache           |
 
@@ -156,9 +156,9 @@ The `config.php` file also contains lots of options to control how the applicati
 | `display_version`          | Boolean | `true`                | Display node `bitcoind` version                                                                    |
 | `display_github_ribbon`    | Boolean | `true`                | Displays the 'Fork me on GitHub' ribbon                                                            |
 | `display_max_height`       | Boolean | `false`               | Displays the node height as a percentage of network height                                         |
-| `use_bitcoind_ip`          | Boolean | `true`                | Use the Bitcoin daemon to get the public IP, instead of `$_SERVER`                                 |
+| `use_bitcoind_ip`          | Boolean | `true`                | Use the SEED daemon to get the public IP, instead of `$_SERVER`                                 |
 | `intro_text`               | String  | `not_set`             | Introductory text to display above the node statistics.                                            |
-| `title_text`               | String  | `Bitcoin Node Status` | Value to display for the web browser title and main heading                                        |
+| `title_text`               | String  | `SEED Node Status` | Value to display for the web browser title and main heading                                        |
 | `display_bitnodes_info`    | Boolean | `false`               | Displays various information via the bitnodes.21.co API                                            |
 | `display_chart`            | Boolean | `false`               | Displays a chart showing the stats collected by the stats.php script                               |
 | `display_peer_chart`       | Boolean | `false`               | Displays a chart showing the mix of node versions connected to your node                           |
@@ -187,8 +187,8 @@ The `config.php` file also contains lots of options to control how the applicati
 
 | Value                     | Type    | Default    | Explanation                                                 |
 |---------------------------|---------|------------|-------------------------------------------------------------|
-| `display_bitcoind_uptime` | Boolean | `true`     | Displays the uptime of the Bitcoin daemon                   |
-| `bitcoind_process_name`   | String  | `bitcoind` | Name to use when getting the bitcoin daemon process' uptime |
+| `display_bitcoind_uptime` | Boolean | `true`     | Displays the uptime of the SEED daemon                   |
+| `bitcoind_process_name`   | String  | `SEEDd` | Name to use when getting the SEED daemon process' uptime |
 
 ### System
 
@@ -206,6 +206,6 @@ The `config.php` file also contains lots of options to control how the applicati
 
 ## Licensing
 
-* Copyright (C) 2015 [Craig Watson](http://www.cwatson.org)
+* Copyright (C) 2015 [Craig Watson](http://www.cwatson.org) | Copyright (C) 2019 [SEED](https://seednetwork.io)
 * Distributed under the terms of the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0) - see [LICENSE file](https://github.com/craigwatson/bitcoind-status/blob/master/LICENSE) for details.
 * [EasyBitcoin-PHP library](https://github.com/aceat64/EasyBitcoin-PHP) is reproduced under the terms of the [MIT licence](http://opensource.org/licenses/MIT) and is used from commit [670414e](https://github.com/aceat64/EasyBitcoin-PHP/tree/670414e1b733e11bb7bdf4fcb17169853301716b).
