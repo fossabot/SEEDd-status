@@ -1,6 +1,7 @@
 # SEEDd-status
 
 [![Travis CI Status](https://travis-ci.org/SEEDPlatform/SEEDd-status.svg?branch=master)](https://travis-ci.org/SEEDPlatform/SEEDd-status)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSEEDPlatform%2FSEEDd-status.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSEEDPlatform%2FSEEDd-status?ref=badge_shield)
 
 This is a small PHP application designed to display status and information from the SEED node daemon.
 
@@ -209,3 +210,6 @@ The `config.php` file also contains lots of options to control how the applicati
 * Copyright (C) 2015 [Craig Watson](http://www.cwatson.org) | Copyright (C) 2019 [SEED](https://seednetwork.io)
 * Distributed under the terms of the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0) - see [LICENSE](LICENSE) for details.
 * [EasyBitcoin-PHP library](https://github.com/aceat64/EasyBitcoin-PHP) is reproduced under the terms of the [MIT license](http://opensource.org/licenses/MIT) and is used from commit [670414e](https://github.com/aceat64/EasyBitcoin-PHP/tree/670414e1b733e11bb7bdf4fcb17169853301716b).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSEEDPlatform%2FSEEDd-status.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FSEEDPlatform%2FSEEDd-status?ref=badge_large)
