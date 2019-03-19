@@ -57,6 +57,11 @@ function getData($from_cache = false)
     $data['connections'] = $net_info['connections'];
     $data['subversion'] = $net_info['subversion'];
 
+    // Get Difficulty
+    $difficulty = $bitcoin->getdifficulty();
+    $data['proof-of-stake'] = $difficulty['proof-of-stake'];
+    $data['proof-of-work'] = $difficulty['proof-of-work'];
+
     // Handle errors if they happened
     if (!$data) {
         $return_data['error'] = $bitcoin->error;
@@ -114,13 +119,13 @@ function getData($from_cache = false)
         $bitnodes_curl = curl_init();
     }
 
-    // Get max height from bitnodes.earn.com
+    // Get max height from explorer.theseedex.com
     if ($config['display_max_height'] === true) {
         if ($config['display_testnet'] === true) {
-            $exec_result = json_decode(curlRequest("https://testnet.blockexplorer.com/api/status?q=getBlockCount", $bitnodes_curl), true);
+            $exec_result = json_decode(curlRequest("https://testnet.theseedex.com/api/getblockcount", $bitnodes_curl), true);
             $data['max_height'] = $exec_result['blockcount'];
         } else {
-            $exec_result = json_decode(curlRequest("https://bitnodes.earn.com/api/v1/snapshots/", $bitnodes_curl), true);
+            $exec_result = json_decode(curlRequest("https://explorer.theseedex.com/api/getblockcount", $bitnodes_curl), true);
             $data['max_height'] = $exec_result['results'][0]['latest_height'];
         }
         $data['node_height_percent'] = round(($data['blocks']/$data['max_height'])*100, 1);
@@ -359,7 +364,7 @@ function curlRequest($url, $curl_handle, $fail_on_error = false)
 function generateDonationImage()
 {
     global $config;
-    $alt_text = 'Donate ' . $config['donation_amount'] . ' BTC to ' . $config['donation_address'];
+    $alt_text = 'Donate ' . $config['donation_amount'] . ' SEED to ' . $config['donation_address'];
     return "\n" . '<img src="https://chart.googleapis.com/chart?chld=H|2&chs=225x225&cht=qr&chl=' . $config['donation_address'] . '" alt="' . $alt_text . '" />' . "\n";
 }
 
