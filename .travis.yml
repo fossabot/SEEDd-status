@@ -10,4 +10,4 @@ before_script: composer install
 script: ./run_tests.sh
 notifications:
   email:
-    - craig@cwatson.org
+    - info@seednetwork.io
