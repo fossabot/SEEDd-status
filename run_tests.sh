@@ -1,6 +1,6 @@
 #!/bin/bash
 
-composer install
+composer update
 
 PHP_FILES=$(find . -path ./vendor -prune -o -type f -iname "*.php" -print)
 
